@@ -39,10 +39,7 @@ class Post
 
     /**
      * @ORM\Column(type="text", length=50000, nullable=false)
-     * @Assert\NotBlank(
-     *      message="validation.post.text.notblank",
-     *      groups="Default"
-     * )
+     * @Assert\NotBlank(message="validation.post.text.notblank")
      * @Assert\Length(
      *      min=3, 
      *      max=50000, 
@@ -74,7 +71,6 @@ class Post
     /**
      * @ORM\Column(type="string", nullable=false)
      * @Assert\Choice(
-     *      groups="Default",
      *      callback="getPostTypes",
      *      message="validation.post.type.choices"
      * )
@@ -196,10 +192,7 @@ class Post
      */
     public static function getPostTypes()
     {
-        return array(
-            self::POST_ARCHIVAL => self::POST_ARCHIVAL,
-            self::POST_NEW => self::POST_NEW
-        );
+        return array(self::POST_ARCHIVAL, self::POST_NEW);
     }
 
     /**

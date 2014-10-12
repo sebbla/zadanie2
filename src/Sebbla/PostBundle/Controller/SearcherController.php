@@ -57,8 +57,7 @@ class SearcherController extends Controller
      */
     public function postSearchAction(Request $request)
     {
-        $post = new Post();
-        $form = $this->createPostSearchForm($post);
+        $form = $this->createPostSearchForm();
         $form->handleRequest($request);
         if ($form->isValid()) {
             $data = $form->getData();
@@ -69,7 +68,9 @@ class SearcherController extends Controller
             return array('results' => $results);
         }
 
-        return $this->redirect($this->generateUrl('post_searcher'));
+        return $this->render('SebblaPostBundle:Searcher:postSearcher.html.twig', array(
+                    'form' => $form->createView(),
+        ));
     }
 
     /**

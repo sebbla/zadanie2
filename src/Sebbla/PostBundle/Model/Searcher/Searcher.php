@@ -18,7 +18,7 @@ class Searcher extends AbstractSearcher
      */
     private $searcherType;
 
-    function __construct(SearcherTypeInterface $searcherType)
+    public function __construct(SearcherTypeInterface $searcherType)
     {
         $this->searcherType = $searcherType;
     }

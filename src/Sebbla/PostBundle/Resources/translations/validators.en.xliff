@@ -33,7 +33,27 @@
             <trans-unit id="8">
                 <source>validation.post.image.maxsize</source>
                 <target>File is too big ({{ size }} {{ suffix }}). Use file with size {{ limit }} {{ suffix }} or less</target>
-            </trans-unit>             
+            </trans-unit>   
+            <trans-unit id="9">
+                <source>validation.post.type.choices</source>
+                <target>Invalid post type</target>
+            </trans-unit>   
+            <trans-unit id="10">
+                <source>validation.postsearcher.name.length.min</source>
+                <target>{1}Value is too short. It should have {{ limit }} char or more.|]1,4]Value is too short. It should have {{ limit }} chars or more.|]4,+Inf]Value is too short. It should have {{ limit }} chars or more.</target>
+            </trans-unit>
+             <trans-unit id="11">
+                <source>validation.postsearcher.name.length.max</source>
+                <target>{1}Value is too long. It should have {{ limit }} char or less.|]1,4]Value is too long. It should have {{ limit }} chars or less.|]4,+Inf]Value is too long. It should have {{ limit }} chars or less.</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>validation.postsearcher.type.choices</source>
+                <target>Invalid post type</target>
+            </trans-unit>     
+            <trans-unit id="13">
+                <source>validation.postsearcher.name.notblank</source>
+                <target>There is nothing to search</target>
+            </trans-unit>      
         </body>
     </file>
 </xliff>
