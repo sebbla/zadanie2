@@ -2,11 +2,12 @@ parameters:
     sebbla_post.post.imagesdir: "/public_html/uploads/images"
     sebbla_post.searcher.class: Sebbla\PostBundle\Model\Searcher\Searcher
     sebbla_post.searcher.type.class: Sebbla\PostBundle\Model\Searcher\SimpleSearcher    
+    sebbla_post.post.sanitizer.class: Sebbla\PostBundle\Model\Sanitizer\PostSanitizer    
 
 services:    
     sebbla_post.post.subscriber:
         class: Sebbla\PostBundle\Model\Listeners\PostSubscriber
-        arguments: [%kernel.root_dir%, %sebbla_post.post.imagesdir%]
+        arguments: [%kernel.root_dir%, %sebbla_post.post.imagesdir%, "@sebbla_post.post.sanitizer"]
         tags:
             - { name: doctrine.event_subscriber, connection: default }
     sebbla_post.searcher.type:
@@ -15,3 +16,5 @@ services:
     sebbla_post.searcher:
         class: %sebbla_post.searcher.class%
         arguments: ["@sebbla_post.searcher.type"]
+    sebbla_post.post.sanitizer:
+        class: %sebbla_post.post.sanitizer.class%

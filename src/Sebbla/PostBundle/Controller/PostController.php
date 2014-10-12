@@ -29,7 +29,7 @@ class PostController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $postQuery = $em->getRepository('SebblaPostBundle:Post')->findAllQuery();
-        $paginator  = $this->get('knp_paginator');
+        $paginator = $this->get('knp_paginator');
         $pagination = $paginator->paginate($postQuery, $this->get('request')->query->get('page', 1), 20);
 
         return array('pagination' => $pagination);
@@ -57,9 +57,9 @@ class PostController extends Controller
 
         return array(
             'post' => $post,
-            'form'   => $form->createView(),
+            'form' => $form->createView(),
         );
-    }    
+    }
 
     /**
      * Displays a form to create a new Post entity.
@@ -71,11 +71,11 @@ class PostController extends Controller
     public function newAction()
     {
         $post = new Post();
-        $form   = $this->createCreateForm($post);
+        $form = $this->createCreateForm($post);
 
         return array(
             'post' => $post,
-            'form'   => $form->createView(),
+            'form' => $form->createView(),
         );
     }
 
@@ -92,12 +92,12 @@ class PostController extends Controller
         $translator = $this->get('translator');
         $post = $em->getRepository('SebblaPostBundle:Post')->find($id);
         if (!$post) {
-            throw $this->createNotFoundException($translator->trans('post.notfound',array(),'SebblaPostBundle'));
+            throw $this->createNotFoundException($translator->trans('post.notfound', array(), 'SebblaPostBundle'));
         }
         $deleteForm = $this->createDeleteForm($id);
 
         return array(
-            'post'      => $post,
+            'post' => $post,
             'delete_form' => $deleteForm->createView(),
         );
     }
@@ -115,17 +115,16 @@ class PostController extends Controller
         $translator = $this->get('translator');
         $post = $em->getRepository('SebblaPostBundle:Post')->find($id);
         if (!$post) {
-            throw $this->createNotFoundException($translator->trans('post.notfound',array(),'SebblaPostBundle'));
+            throw $this->createNotFoundException($translator->trans('post.notfound', array(), 'SebblaPostBundle'));
         }
         $editForm = $this->createEditForm($post);
 
         return array(
-            'post'      => $post,
-            'edit_form'   => $editForm->createView(),
+            'post' => $post,
+            'edit_form' => $editForm->createView(),
         );
     }
 
-    
     /**
      * Edits an existing Post entity.
      *
@@ -139,7 +138,7 @@ class PostController extends Controller
         $translator = $this->get('translator');
         $post = $em->getRepository('SebblaPostBundle:Post')->find($id);
         if (!$post) {
-            throw $this->createNotFoundException($translator->trans('post.notfound',array(),'SebblaPostBundle'));
+            throw $this->createNotFoundException($translator->trans('post.notfound', array(), 'SebblaPostBundle'));
         }
         $editForm = $this->createEditForm($post);
         $editForm->handleRequest($request);
@@ -150,10 +149,11 @@ class PostController extends Controller
         }
 
         return array(
-            'post'      => $post,
-            'edit_form'   => $editForm->createView(),
+            'post' => $post,
+            'edit_form' => $editForm->createView(),
         );
     }
+
     /**
      * Deletes a Post entity.
      *
@@ -169,7 +169,7 @@ class PostController extends Controller
             $em = $this->getDoctrine()->getManager();
             $post = $em->getRepository('SebblaPostBundle:Post')->find($id);
             if (!$post) {
-                throw $this->createNotFoundException($translator->trans('post.notfound',array(),'SebblaPostBundle'));
+                throw $this->createNotFoundException($translator->trans('post.notfound', array(), 'SebblaPostBundle'));
             }
 
             $em->remove($post);
@@ -180,19 +180,19 @@ class PostController extends Controller
     }
 
     /**
-    * Creates a form to edit a Post entity.
-    *
-    * @param Post $post The entity
-    * @return \Symfony\Component\Form\Form The form
-    */
+     * Creates a form to edit a Post entity.
+     *
+     * @param Post $post The entity
+     * @return \Symfony\Component\Form\Form The form
+     */
     private function createEditForm(Post $post)
-    {   
+    {
         $translator = $this->get('translator');
         $form = $this->createForm(new PostType(), $post, array(
             'action' => $this->generateUrl('post_update', array('id' => $post->getId())),
             'method' => 'PUT',
         ));
-        $form->add('submit', 'submit', array('label' => $translator->trans('post.update',array(),'SebblaPostBundle')));
+        $form->add('submit', 'submit', array('label' => $translator->trans('post.update', array(), 'SebblaPostBundle')));
 
         return $form;
     }
@@ -210,7 +210,7 @@ class PostController extends Controller
             'action' => $this->generateUrl('post_create'),
             'method' => 'POST',
         ));
-        $form->add('submit', 'submit', array('label' => $translator->trans('post.create',array(),'SebblaPostBundle')));
+        $form->add('submit', 'submit', array('label' => $translator->trans('post.create', array(), 'SebblaPostBundle')));
 
         return $form;
     }
@@ -225,10 +225,11 @@ class PostController extends Controller
     {
         $translator = $this->get('translator');
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('post_delete', array('id' => $id)))
-            ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => $translator->trans('post.delete',array(),'SebblaPostBundle')))
-            ->getForm()
+                        ->setAction($this->generateUrl('post_delete', array('id' => $id)))
+                        ->setMethod('DELETE')
+                        ->add('submit', 'submit', array('label' => $translator->trans('post.delete', array(), 'SebblaPostBundle')))
+                        ->getForm()
         ;
     }
+
 }

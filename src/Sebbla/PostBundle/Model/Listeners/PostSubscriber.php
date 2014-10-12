@@ -5,6 +5,7 @@ namespace Sebbla\PostBundle\Model\Listeners;
 use Doctrine\Common\EventSubscriber;
 use Doctrine\ORM\Event\LifecycleEventArgs;
 use Sebbla\PostBundle\Entity\Post;
+use Sebbla\PostBundle\Model\Sanitizer\SanitizerInterface;
 
 /**
  * Post subscriber.
@@ -19,9 +20,17 @@ class PostSubscriber implements EventSubscriber
      */
     private $imagesDir;
 
-    public function __construct($kernelRootDir, $imagesDir)
+    /**
+     *  Sanitizer.
+     * 
+     * @var \Sebbla\PostBundle\Model\Sanitizer\SanitizerInterface
+     */
+    private $postSanitizer;
+
+    public function __construct($kernelRootDir, $imagesDir, SanitizerInterface $postSanitizer)
     {
         $this->imagesDir = $kernelRootDir . DIRECTORY_SEPARATOR . '..' . $imagesDir;
+        $this->postSanitizer = $postSanitizer;
     }
 
     /**
@@ -64,6 +73,9 @@ class PostSubscriber implements EventSubscriber
         if (!$this->isPostEntity($entity)) {
             return;
         }
+
+        // Sanitize
+        $this->sanitize($entity);
 
         if (null !== $entity->getImage()) {
             $filename = substr(\md5(\time()), 0, 10);
@@ -136,6 +148,17 @@ class PostSubscriber implements EventSubscriber
         if ($file = $entity->getFile()) {
             unlink($this->getUploadImagesDir() . '/' . $file);
         }
+    }
+
+    /**
+     * Sanitizing Post entity.
+     * 
+     * @param \Sebbla\PostBundle\Entity\Post $post
+     */
+    private function sanitize(Post $post)
+    {
+        $this->postSanitizer->setObject($post);
+        $this->postSanitizer->sanitize();
     }
 
     /**

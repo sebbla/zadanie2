@@ -5,7 +5,7 @@ namespace Sebbla\PostBundle\Model\Searcher;
 /**
  * Abstract searcher class.
  */
-class AbstractSearcher
+abstract class AbstractSearcher
 {
 
     /**

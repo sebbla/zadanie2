@@ -9,7 +9,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Zadanie 2</a>
+            <a class="navbar-brand" href="{{ path('homepage') }}"><b>Zadanie 2</b></a>
         </div>
         <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
@@ -17,12 +17,5 @@
                 <li><a href="{{ path('post_new') }}">{{ 'post.new'|trans({},'SebblaPostBundle') }}</a></li>
             </ul>
         </div>
-        {#{{ render(controller('Sebbla:Article:recentArticles', {'max': 3 })) }}  #}
-        {#<form class="navbar-form navbar-right" role="search">
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search">
-            </div>
-            <button type="submit" class="btn btn-default">Submit</button>
-        </form>#}
     </nav>                
 </div>

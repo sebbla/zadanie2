@@ -4,9 +4,8 @@
         <meta charset="UTF-8" />
         <title>{% block title %}Zadanie 2{% endblock %}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        {% block stylesheets %}{% endblock %}
         <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         {% stylesheets
             'bundles/sebblapost/css/styles.css' filter='cssrewrite' output='css/styles.css' %}
             <link rel="stylesheet" href="{{ asset_url }}" />
@@ -25,7 +24,6 @@
         <div class="container">
             {% block body %}{% endblock %}            
         </div>
-        {% block javascripts %}{% endblock %}
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     </body>
