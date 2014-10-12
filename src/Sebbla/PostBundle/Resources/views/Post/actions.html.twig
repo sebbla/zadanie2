@@ -1,0 +1,7 @@
+{# Post actions template #}
+
+<a class="pull-right btn btn-sm btn-default" href="{{ path('post_edit', { 'id': post.id }) }}">{{ 'post.edit'|trans({},'SebblaPostBundle') }}</a>
+{{ form_start(delete_form, { 'action': path('post_delete', { 'id': post.id }), 'attr': { 'class': 'form-horizontal', 'role': 'form' } }) }}
+    {{ form_widget(delete_form.submit,{ 'attr': { 'class': 'btn btn-sm btn-danger' } }) }}                     
+    {{ form_rest(delete_form) }}
+{{ form_end(delete_form) }}

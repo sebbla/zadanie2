@@ -1,0 +1,35 @@
+{# Show post template #}
+
+{% extends '::base.html.twig' %}
+
+{% block breadcrumb %}            
+    <div class="breadcrumb-container">            
+        <ol class="breadcrumb container">
+            <li><a href="{{ path('post') }}"><span class="fa fa-home"></span></a></li>
+            <li><a href="{{ path('post') }}">{{ 'post.index'|trans({},'SebblaPostBundle') }}</a></li>
+            <li class="active">{{ 'post.show.breadcrumb'|trans({},'SebblaPostBundle') }}</li>
+        </ol>
+    </div>
+{% endblock %}
+
+{% block body -%}
+    <article class="post">
+        <div class="actions">
+            {% include 'SebblaPostBundle:Post:actions.html.twig' with { 'post': post, 'delete_form': delete_form } %}            
+        </div>       
+        <p class="text-center"><i class="small">{{ post.type }}</i></p>
+        <header class="row text-center">
+            <h3>{{ post.name }}</h3>
+        </header> 
+        <div>
+            <figure class="text-center">
+                {% if post.file %}
+                    <img src="{{ asset('uploads/images/' ~  post.file) }}" alt="{{ 'post.file'|trans({},'SebblaPostBundle') }}" class="img-thumbnail">
+                {% endif %}                    
+            </figure>
+        </div>
+        <div class="-col-xs-12 -col-sm-8">
+            {{ post.text | raw | nl2br }}                    
+        </div>
+    </article>
+{% endblock %}

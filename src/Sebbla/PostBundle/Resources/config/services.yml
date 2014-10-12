@@ -1,0 +1,17 @@
+parameters:
+    sebbla_post.post.imagesdir: "/public_html/uploads/images"
+    sebbla_post.searcher.class: Sebbla\PostBundle\Model\Searcher\Searcher
+    sebbla_post.searcher.type.class: Sebbla\PostBundle\Model\Searcher\SimpleSearcher    
+
+services:    
+    sebbla_post.post.subscriber:
+        class: Sebbla\PostBundle\Model\Listeners\PostSubscriber
+        arguments: [%kernel.root_dir%, %sebbla_post.post.imagesdir%]
+        tags:
+            - { name: doctrine.event_subscriber, connection: default }
+    sebbla_post.searcher.type:
+        class: %sebbla_post.searcher.type.class%
+        arguments: ["@doctrine.orm.entity_manager"]
+    sebbla_post.searcher:
+        class: %sebbla_post.searcher.class%
+        arguments: ["@sebbla_post.searcher.type"]

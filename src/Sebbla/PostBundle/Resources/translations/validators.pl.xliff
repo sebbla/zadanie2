@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>validation.post.name.length.min</source>
+                <target>{1}Nazwa posta jest za krótka minimum {{ limit }} znak|]1,4]Tytuł posta jest za krótki minimum {{ limit }} znaki|]4,+Inf]Tytuł posta jest za krótki minimum {{ limit }} znaków</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>validation.post.name.length.max</source>
+                <target>{1}Nazwa posta jest za długa maksimum {{ limit }} znak|]1,4]Tytuł posta jest za długi maksimum {{ limit }} znaki|]4,+Inf]Tytuł posta jest za długi maksimum {{ limit }} znaków</target>
+            </trans-unit> 
+            <trans-unit id="3">
+                <source>validation.post.name.notblank</source>
+                <target>Nie podano nazwy posta</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>validation.post.text.length.min</source>
+                <target>{1}Tekst posta jest za krótki minimum {{ limit }} znak|]1,4]Tekst posta jest za krótki minimum {{ limit }} znaki|]4,+Inf]Tekst posta jest za krótki minimum {{ limit }} znaków</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>validation.post.text.length.max</source>
+                <target>{1}Tekst posta jest za długi maksimum {{ limit }} znak|]1,4]Tekst posta jest za długi maksimum {{ limit }} znaki|]4,+Inf]Tekst posta jest za długi maksimum {{ limit }} znaków</target>
+            </trans-unit>  
+            <trans-unit id="6">
+                <source>validation.post.text.notblank</source>
+                <target>Nie podano tekstu posta</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>validation.post.image.mimetypes</source>
+                <target>Dozwolone są tylko pliki .jpg i .png</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>validation.post.image.maxsize</source>
+                <target>Plik jest za duży ({{ size }} {{ suffix }}). Dozwolony rozmiar pliku to {{ limit }} {{ suffix }}</target>
+            </trans-unit>             
+        </body>
+    </file>
+</xliff>

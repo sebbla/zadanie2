@@ -1,0 +1,26 @@
+{# Edit post template #}
+
+{% extends '::base.html.twig' %}
+
+{% block breadcrumb %}            
+    <div class="breadcrumb-container">            
+        <ol class="breadcrumb container">
+            <li><a href="{{ path('post') }}"><span class="fa fa-home"></span></a></li>
+            <li><a href="{{ path('post') }}">{{ 'post.index'|trans({},'SebblaPostBundle') }}</a></li>
+            <li class="active">{{ 'post.edit.breadcrumb'|trans({},'SebblaPostBundle') }}</li>
+        </ol>
+    </div>
+{% endblock %}
+
+{% block body -%}    
+    <section class="form-container">
+        <header class="row text-center">
+            <h3 class="col-xs-12">{{ 'post.edit.title'|trans({'%Post.name%': post.name},'SebblaPostBundle') }}</h3>
+        </header>
+        {{ form_start(edit_form, { 'action': path('post_update', { 'id': post.id }), 'attr': { 'class': 'form-horizontal', 'role': 'form' } }) }}
+            {{ form_errors(edit_form) }}
+            {% include 'SebblaPostBundle:Post:formContent.html.twig' with { 'form': edit_form } %}            
+            {{ form_rest(edit_form) }}
+        {{ form_end(edit_form) }}
+    </section>
+{% endblock %}

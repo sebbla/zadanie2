@@ -1,0 +1,25 @@
+{# New post template #}
+
+{% extends '::base.html.twig' %}
+
+{% block breadcrumb %}            
+    <div class="breadcrumb-container">            
+        <ol class="breadcrumb container">
+            <li><a href="{{ path('post') }}"><span class="fa fa-home"></span></a></li>
+            <li><a href="{{ path('post') }}">{{ 'post.index'|trans({},'SebblaPostBundle') }}</a></li>
+            <li class="active">{{ 'post.new'|trans({},'SebblaPostBundle') }}</li>
+        </ol>
+    </div>
+{% endblock %}
+
+{% block body -%}
+    <section class="form-container">
+        <header class="row text-center">
+            <h3 class="col-xs-12">{{ 'post.new.title'|trans({},'SebblaPostBundle') }}</h3>
+        </header>
+        {{ form_start(form, { 'action': path('post_create'), 'attr': { 'class': 'form-horizontal', 'role': 'form' } }) }}
+            {% include 'SebblaPostBundle:Post:formContent.html.twig' with { 'form': form } %}            
+            {{ form_rest(form) }}
+        {{ form_end(form) }}
+    </section>
+{% endblock %}

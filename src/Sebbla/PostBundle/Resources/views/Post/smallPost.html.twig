@@ -1,0 +1,14 @@
+{# Small post template #}
+
+<article class="post-small col-xs-12 col-sm-6 col-lg-4">   
+    <p><i class="small">{{ post.type }}</i></p>
+    <header class="-col-xs-12">
+        <h4><a href="{{ path('post_show', { 'id': post.id }) }}">{{ post.name }}</a></h4>
+    </header>
+    <div class="-col-xs-12 -col-sm-8">
+        {{ post.text | truncate(255, true, '...') }}                    
+    </div>
+    <div class="-col-xs-12 actions text-center">
+        <a class="btn btn-xs btn-default" href="{{ path('post_show', { 'id': post.id }) }}">{{ 'post.show'|trans({},'SebblaPostBundle') }}</a>
+    </div>
+</article>  

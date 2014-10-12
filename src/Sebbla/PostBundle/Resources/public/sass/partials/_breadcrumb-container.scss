@@ -1,0 +1,11 @@
+.breadcrumb-container{
+    @include background($gray-light);
+    //border: 1px solid red;
+    .breadcrumb{ 
+        margin-bottom: 0;
+        a{
+            color: $gray-darker;
+            font-weight: 300;
+        }
+    }
+}

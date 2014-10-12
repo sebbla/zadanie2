@@ -1,0 +1,14 @@
+.post-small {
+    height: 220px;
+    margin-bottom: 45px;
+    header > h4{
+        margin-top: 5px;
+    }
+    > p{
+        text-transform:  uppercase;
+        margin-bottom: 0;
+        i{
+            border-bottom: 1px dashed $gray;
+        }
+    }
+}

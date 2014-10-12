@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Zadanie 2{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% block stylesheets %}{% endblock %}
+        <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        {% stylesheets
+            'bundles/sebblapost/css/styles.css' filter='cssrewrite' output='css/styles.css' %}
+            <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+    </head>
+    <body>
+        {% include('SebblaPostBundle::navigation.html.twig') %}
+        {% block breadcrumb %}            
+            <div class="breadcrumb-container">            
+                <ol class="breadcrumb container">
+                    <li><a href="{{ path('post') }}"><span class="fa fa-home"></span></a></li>
+                    <li class="active">{{ 'post.index'|trans({},'SebblaPostBundle') }}</li>
+                </ol>
+            </div>
+        {% endblock %}
+        <div class="container">
+            {% block body %}{% endblock %}            
+        </div>
+        {% block javascripts %}{% endblock %}
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    </body>
+</html>

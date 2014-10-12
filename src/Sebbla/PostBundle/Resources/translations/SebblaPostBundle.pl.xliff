@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>form.post.name</source>
+                <target>Nazwa</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>form.post.text</source>
+                <target>Tekst</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>form.post.type</source>
+                <target>Typ</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>form.post.image</source>
+                <target>Obrazek</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>post.new</source>
+                <target>Nowy post</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>post.edit</source>
+                <target>Edytuj</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>post.show</source>
+                <target>Pokaż</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>post.index</source>
+                <target>Lista postów</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>page.previous</source>
+                <target>Poprzednia strona</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>page.next</source>
+                <target>Następna strona</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>post.create</source>
+                <target>Utwórz post</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>post.new.title</source>
+                <target>Tworzenie nowego posta</target>
+            </trans-unit>
+            <trans-unit id="14">
+                <source>post.edit.title</source>
+                <target>Edycja posta "%Post.name%"</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>post.name.placeholder</source>
+                <target>Nazwa posta</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>post.text.placeholder</source>
+                <target>Tekst posta</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>post.update</source>
+                <target>Zaktualizuj post</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>post.show.breadcrumb</source>
+                <target>Wyświetlanie posta</target>
+            </trans-unit>
+            <trans-unit id="19">
+                <source>post.new.breadcrumb</source>
+                <target>Tworzenie post</target>
+            </trans-unit>
+            <trans-unit id="20">
+                <source>post.edit.breadcrumb</source>
+                <target>Edycja posta</target>
+            </trans-unit>
+            <trans-unit id="21">
+                <source>post.delete</source>
+                <target>Usuń</target>
+            </trans-unit>
+            <trans-unit id="22">
+                <source>post.list.title</source>
+                <target>Lista postów</target>
+            </trans-unit>
+            <trans-unit id="23">
+                <source>post.notfound</source>
+                <target>Post nie został znaleziony</target>
+            </trans-unit>
+            <trans-unit id="24">
+                <source>post.sorting</source>
+                <target>Sortowanie</target>
+            </trans-unit>
+            <trans-unit id="25">
+                <source>post.sorting.byname</source>
+                <target>Po nazwie</target>
+            </trans-unit>
+            <trans-unit id="26">
+                <source>post.sorting.bytype</source>
+                <target>Po typie</target>
+            </trans-unit>
+            <trans-unit id="27">
+                <source>searcher</source>
+                <target>Wyszukiwarka</target>
+            </trans-unit>
+            <trans-unit id="28">
+                <source>search.post.breadcrumb</source>
+                <target>Wyszukiwanie postów</target>
+            </trans-unit>
+            <trans-unit id="29">
+                <source>search.post.title</source>
+                <target>Wyszukaj posty</target>
+            </trans-unit>
+            <trans-unit id="30">
+                <source>search.search</source>
+                <target>Wyszukaj</target>
+            </trans-unit>
+            <trans-unit id="31">
+                <source>results.title</source>
+                <target>Znaleziono wyników (%nbofresults%)</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

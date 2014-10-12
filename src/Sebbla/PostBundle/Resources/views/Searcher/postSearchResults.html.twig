@@ -1,0 +1,24 @@
+{# Edit post template #}
+
+{% extends '::base.html.twig' %}
+
+{% block breadcrumb %}            
+    <div class="breadcrumb-container">            
+        <ol class="breadcrumb container">
+            <li><a href="{{ path('post') }}"><span class="fa fa-home"></span></a></li>
+            <li><a href="{{ path('searcher') }}">{{ 'searcher'|trans({},'SebblaPostBundle') }}</a></li>
+            <li class="active">{{ 'search.post.breadcrumb'|trans({},'SebblaPostBundle') }}</li>
+        </ol>
+    </div>
+{% endblock %}
+
+{% block body -%}  
+    <section class="results-container row">
+        <header class="text-center">
+            <h3 class="col-xs-12">{{ 'results.title'|trans({ '%nbofresults%': results|length },'SebblaPostBundle') }}</h3>
+        </header>       
+        {% for post in results %}
+            {% include 'SebblaPostBundle:Post:smallPost.html.twig' with { 'post': post } %}                      
+        {% endfor %}
+    </section>
+{% endblock %}

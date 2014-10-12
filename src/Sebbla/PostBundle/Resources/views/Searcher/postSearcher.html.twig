@@ -1,0 +1,51 @@
+{# Edit post template #}
+
+{% extends '::base.html.twig' %}
+
+{% block breadcrumb %}            
+    <div class="breadcrumb-container">            
+        <ol class="breadcrumb container">
+            <li><a href="{{ path('post') }}"><span class="fa fa-home"></span></a></li>
+            <li><a href="{{ path('searcher') }}">{{ 'searcher'|trans({},'SebblaPostBundle') }}</a></li>
+            <li class="active">{{ 'search.post.breadcrumb'|trans({},'SebblaPostBundle') }}</li>
+        </ol>
+    </div>
+{% endblock %}
+
+{% block body -%}    
+    <section class="form-container">
+        <header class="row text-center">
+            <h3 class="col-xs-12">{{ 'search.post.title'|trans({},'SebblaPostBundle') }}</h3>
+        </header>
+        {{ form_start(form, { 'action': path('post_search'), 'attr': { 'class': 'form-horizontal', 'role': 'form' } }) }}
+            {{ form_errors(form) }}
+            <div class="form-group">
+                {{ form_label(form.name,null,{ 'label_attr': { 'class': 'col-sm-2 control-label' }}) }}
+                <div class="col-sm-10">
+                    {{ form_widget(form.name,{ 'attr': { 'class': 'form-control'}}) }}
+                    <div class="error-container">
+                        {{ form_errors(form.name) }}                    
+                    </div>
+                </div>
+            </div>           
+            <div class="form-group">
+                {{ form_label(form.type,null,{ 'label_attr': { 'class': 'col-sm-2 control-label' }}) }}
+                <div class="col-sm-10">
+                    {{ form_widget(form.type,{ 'attr': { 'class': 'form-control' }}) }}
+                    <div class="error-container">
+                        {{ form_errors(form.type) }}                    
+                    </div>
+               </div>
+            </div>
+             
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10 text-right">
+                    {{ form_widget(form.submit,{ 'attr': { 'class': 'btn btn-default' } }) }}                    
+                </div>
+            </div>
+            {{ form_rest(form) }}
+        {{ form_end(form) }}
+
+        {{ form_rest(form) }}
+    </section>
+{% endblock %}

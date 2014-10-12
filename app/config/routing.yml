@@ -1,0 +1,3 @@
+SebblaPostBundle:
+    resource: "@SebblaPostBundle/Controller"
+    type: annotation

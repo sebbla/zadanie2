@@ -1,0 +1,10 @@
+.navbar{
+    margin-bottom: 0;    
+    .nav > li > a{
+        color: #fff;
+    }
+    .navbar-brand{
+        color: #fff;
+    }
+    .navbar-toggle .icon-bar { @include background($gray-lighter); }
+}
